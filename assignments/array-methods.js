@@ -82,10 +82,12 @@ console.log(firstNamesAllCaps);
 
 
 
-// let runnersLargeSizeShirt = runners.filter(runners.includes('L'));
+let runnersLargeSizeShirt = runners.filter(function(item){
+  return item.shirt_size === "L";
+});
 
 
-// console.log(runnersLargeSizeShirt);
+console.log(runnersLargeSizeShirt);
 
 
 
@@ -103,7 +105,33 @@ console.log(ticketPriceTotal);
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
+// peeps need to know info for the first 10 id's for signup rewards
+
+let runnersFirstIds = runners.filter(function(item){
+  return item.id < 11;
+});
+
+
+console.log(runnersFirstIds);
 
 // Problem 2
+// emergency!!!!! members of the company "Quaxo" need to be pulled from the race immediately as threats have been made against them!!!!!
+
+let QuaxoOhNo = runners.filter(function(item){
+  return item.company_name === "Quaxo";
+});
+
+
+console.log(QuaxoOhNo);
 
 // Problem 3
+// uh oh, a lot of money was offered to the race managers for the email addresses of its participants! The unknown entity wishes to spam racegoers with annoying race marketing emails!!!!
+
+let allEmails = [];
+
+runners.forEach(function(items){
+return allEmails.push(`${items.email}`);
+
+});
+
+console.log(allEmails);
