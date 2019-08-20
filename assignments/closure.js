@@ -4,6 +4,22 @@
 // that manipulates variables defined in the outer scope.
 // The outer scope can be a parent function, or the top level of the script.
 
+function dogFamily(aFam){
+ 
+  const family = `${aFam}` + " is the family, ";
+      
+  
+  
+  function dogGenus(aGenus){
+    const genus = `${aGenus}` + " is the genus, ";
+
+    function dogSpecies(aSpecies){
+     const species = `${aSpecies}` + " is the species.";
+      console.log(family + genus + species);
+    }dogSpecies("lupus familiaris");
+  }dogGenus("Canis");
+}dogFamily("Canidae");
+
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
 

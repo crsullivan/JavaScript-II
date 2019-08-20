@@ -28,6 +28,7 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
   const test1 = firstItem(items, item => `I love my ${item}!`);
   console.log(test1); // "I love my Pencil!"
 
+
   // TEST 2 (declaring callback before hand):
 
   function logExorbitantPrice(article) {
@@ -39,26 +40,74 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 */
 
 
-function getLength(arr, cb) {
+function getLength(arr, cb1) {
+  return cb1(arr.length);
+  
+}
+  function cb1(length){
+  return `This array's length is ${length}.`;};
+  const prob1 = getLength(items, cb1);
+  console.log(prob1);
   // getLength passes the length of the array into the callback.
-}
 
-function last(arr, cb) {
+
+
+
+
+function getLast(arr, cb2) {
+  return cb2(arr[arr.length-1]);
+}
+function cb2(last){
+  return `"${last}" is the last item in the array.`;
+};
+const prob2 = getLast(items, cb2);
+console.log(prob2);
   // last passes the last item of the array into the callback.
-}
 
-function sumNums(x, y, cb) {
+
+
+
+function sumNums(x, y, cb3) {
+  return cb3(x + y);
+}
+function cb3(sum){
+  return `The sum of ${x} and ${y} is ${sum}.`;
+};
+const x = 4
+const y = 9
+const prob3 = sumNums(x,y,cb3);
+console.log(prob3);
+
   // sumNums adds two numbers (x, y) and passes the result to the callback.
-}
 
-function multiplyNums(x, y, cb) {
+
+function multiplyNums(x, y, cb4) {
+ return cb4(x * y);
+}
+ function cb4(mult) {
+   return `The product of ${x} and ${y} is ${mult}.`;
+ };
+ const prob4 = multiplyNums(x,y,cb4);
+ console.log(prob4);
+ 
+ 
+ 
+ 
   // multiplyNums multiplies two numbers and passes the result to the callback.
-}
+const list = ["pupper", "pepino", "doggo", "pupperoni", "floof"];
 
-function contains(item, list, cb) {
+function contains(item, list, cb5) {
+  return cb5(list.includes(item));
+}
+function cb5(bool){
+  return `           ...${bool}!!!`;
+};
+  const prob5 = contains("doggo", list, cb5);
+  console.log(prob5);
+  
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
-}
+
 
 /* STRETCH PROBLEM */
 
